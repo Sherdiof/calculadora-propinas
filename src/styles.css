@@ -1,5 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
-h1 {
-    font-family: "Ubuntu", sans-serif;
-    font-weight: 300;
+
+/* COLORS */
+
+.color-red {
+  background-color: #A6192E;
+}
+
+.color-black {
+  background-color: #2D2926;
+}
+
+.color-beige {
+  background-color: #D7B290;
+}
+
+.color-bones {
+  background-color: #FBF0E1;
+}
+
+.color-white {
+  background-color: #FFFAF4;
+}
+
+/* LETTERS AND WEIGHT */
+
+.letter-300 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+}
+
+.letter-400 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+.letter-500 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+
+.letter-700 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+/* BODY */
+
+body {
+  background-color: #FFFAF4;
 }
