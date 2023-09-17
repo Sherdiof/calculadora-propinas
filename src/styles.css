@@ -44,8 +44,18 @@
   font-weight: 700;
 }
 
-/* BODY */
+/* LETTERS COLORS */
+
+.letter-red {
+  color: #A6192E;
+}
+
+/* GLOBAL */
 
 body {
   background-color: #FFFAF4;
+}
+
+h1, h2, h3, h4, h5, span {
+  color: #2D2926;
 }
