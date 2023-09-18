@@ -1,0 +1,10 @@
+/* TAMAÑO IMAGEN */
+.resize-image {
+  width: 80px;
+  height: 80px;
+}
+
+.img-logo-name {
+  margin-left: -20px;
+  margin-top: 12px;
+}
