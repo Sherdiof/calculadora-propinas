@@ -11,7 +11,7 @@
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
 
-                <form>
+                <form [formGroup]="form" (ngSubmit)="onLogin()">
 
                   <div class="d-flex align-items-center mb-3 pb-1">
                     <img src="../assets/ASTER.png" class="resize-image">
@@ -21,15 +21,15 @@
                   <h5 class="fw-normal mb-3 pb-3 letter-400" style="letter-spacing: 1px;">Inicio de Sesión</h5>
 
                   <div class="form-outline mb-4">
-                    <input type="email" id="form2Example17" placeholder="Email address" class="form-control form-control-lg letter-400" />
+                    <input formControlName="usuario" type="email" id="form2Example17" placeholder="Email address" class="form-control form-control-lg letter-400" />
                   </div>
 
                   <div class="form-outline mb-4">
-                    <input type="password" id="form2Example27" placeholder="Password" class="form-control form-control-lg letter-400" />
+                    <input formControlName="contraseña" type="password" id="form2Example27" placeholder="Password" class="form-control form-control-lg letter-400" />
                   </div>
 
                   <div class="pt-1 mb-4">
-                    <button class="btn btn-dark btn-lg btn-block w-100 color-black" type="button">Login</button>
+                    <button class="btn btn-dark btn-lg btn-block w-100 color-black" type="submit">Login</button>
                   </div>
 
                   <p><a href="" class="small mb-5 pb-lg-2 letter-300 text-muted text-decoration-none">¿Olvidaste tu contraseña?</a></p>

@@ -1,0 +1,18 @@
+.resize-image {
+  width: 40px;
+  height: 40px;
+}
+
+.img-logo-name {
+  margin-left: -10px;
+  margin-top: 12px;
+  color: white;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  padding-left: 0rem;
+  padding-bottom: 1rem;
+}

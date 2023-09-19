@@ -59,3 +59,6 @@ body {
 h1, h2, h3, h4, h5, span {
   color: #2D2926;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
