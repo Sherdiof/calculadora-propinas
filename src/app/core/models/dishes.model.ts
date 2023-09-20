@@ -1,16 +1,8 @@
 export class dishesRequest { 
     id?: number;
-    nombre: string;
-    precio: number;
-    descripcion: string;
+    nombre?: string;
+    precio?: number;
+    descripcion?: string;
     imagen?: string;
-
-    constructor(id: number,nombre: string,precio: number,descripcion: string,imagen: string){
-        this.id = id,
-        this.nombre = nombre,
-        this.descripcion = descripcion,
-        this.precio = precio,
-        this.imagen = imagen
-    }
 
 }
