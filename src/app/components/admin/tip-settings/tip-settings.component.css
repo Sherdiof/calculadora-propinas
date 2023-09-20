@@ -1,6 +1,28 @@
+/* CLASES */
 .fondo-item {
   background-color: white;
   height: 120px;
   border-radius: 10px;
   border: 1rem;
+}
+
+.estilo-numero {
+  font-size: 30px;
+  margin-top: -15px;
+}
+
+.porcentaje {
+  font-size: 20px;
+  margin-left: -5px;
+}
+
+.form-range {
+  padding: 0 50px;
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: #D7B290;
+}
+input[type="range"]::-moz-range-track {
+  background-color: #FBF0E1;
 }

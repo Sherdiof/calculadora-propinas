@@ -49,7 +49,6 @@ validarRolUsuario(usuario: string, contraseña: string) {
         this.sesion.setWaiterStatus(true);
         this.message.openSnackBar('Bienvenido Usuario');
         this.router.navigate(['/navbar'])
-
       }
     },
     error: err => {

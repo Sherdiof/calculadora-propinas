@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class TipSettingsComponent {
 
+  porcentaje = 10;
+
+  modificarPorcentaje(event: any) {
+    this.porcentaje = event.target.value;
+  }
 }
