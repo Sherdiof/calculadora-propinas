@@ -2,9 +2,17 @@
     margin-top: 100px;
 }
 
+.grid-principal{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding-left: 0rem;
+    padding-bottom: 1rem;
+}
+
 .grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     padding-left: 0rem;
     padding-bottom: 1rem;
@@ -13,6 +21,16 @@
 .card {
     width: 18rem;
     /* height: 18rem; */
+}
+
+.card-total{
+    width: 28rem;
+    top:0;
+    position: sticky;
+}
+
+.identificadores{
+    border: 1px solid black;
 }
 
 .container-img {
@@ -29,4 +47,8 @@
 .boton{
     position: absolute;
     bottom: 0;
+}
+
+.btn{
+    width: 100%;
 }

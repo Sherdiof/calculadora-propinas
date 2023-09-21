@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { of } from "rxjs";
-import { dishesMock } from "../mocks/mocks";
+import { bebidasMock, dishesCategoriesMock, dishesMock } from "../mocks/mocks";
 
 @Injectable({
     providedIn: 'root'
@@ -12,9 +12,16 @@ export class ordersService {
 
     }
 
+    getDishesCategory(){
+        return of(dishesCategoriesMock)
+    }
+
     getDishes(){
         return of(dishesMock)
     }
 
+    getBebidas(){
+        return of (bebidasMock)
+    }
 
 }
