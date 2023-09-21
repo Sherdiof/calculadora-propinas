@@ -16,6 +16,8 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../enviroments/enviroment";
+import { TipHistoryComponent } from './components/tip-history/tip-history.component';
+import { ProductsComponent } from './components/admin/products/products.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import {environment} from "../enviroments/enviroment";
     HomeComponent,
     TipSettingsComponent,
     UsersComponent,
+    TipHistoryComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,62 @@
+<div>
+  <app-navbar></app-navbar>
+
+  <section class="vh-100 color-white">
+    <div class="container py-5 mt-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-md-12">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="g-0 text-center mt-2">
+              <h1 class="letter-700 ">Historial de propina</h1>
+            </div>
+          </div>
+          <div class="card mt-3" style="border-radius: 1rem;">
+            <div class="d-flex justify-content-center align-items-center my-3">
+              <div>
+                <label class="mx-3">Fecha Inicio:</label>
+                <input type="date">
+
+                <label class="mx-3">Fecha Fin:</label>
+                <input type="date">
+
+                <label class="mx-3">Sucursal:</label>
+                <select name="" id="">
+                  <option value="">1</option>
+                </select>
+
+                <button class="btn btn-dark btn-md btn-block color-black mx-3" type="button">Consultar</button>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center my-3 px-5">
+              <table class="table table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                  <th scope="col">No. Factura</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Sucursal</th>
+                  <th scope="col">Usuario</th>
+                  <th scope="col">Propina</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>Q.10</td>
+                </tr>
+                <tr>
+                  <th colspan="4" class="text-end">Total Propina:</th>
+                  <th>Q.10</th>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>

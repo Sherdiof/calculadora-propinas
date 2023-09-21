@@ -5,28 +5,95 @@
     <div class="container py-5 mt-5">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-md-12">
-          <div class="card color-black" style="border-radius: 1rem;">
-            <div class="g-0 mt-2 px-2">
-              <h1 class="letter-700 letter-white">Usuarios</h1>
+          <div class="card" style="border-radius: 1rem;">
+            <div class="g-0 text-center mt-2">
+              <h1 class="letter-700 ">Usuarios</h1>
             </div>
           </div>
-        </div>
-        <div class="card card-total ">
-          <div class="card-body table-responsive">
-            <table class="table table-light">
-              <thead class="table-dark">
-              <tr>
-                <td>Email</td>
-                <td>Rol</td>
-                <td>Acciones</td>
-                <td></td>
-              </tr>
-              </thead>
-            </table>
+          <div class="card mt-3" style="border-radius: 1rem;">
+            <div class="d-flex my-3 justify-content-end">
+              <div class="">
+                <button class="btn btn-dark btn-lg btn-block color-black mx-5" (click)="openPopup()" type="button">Agregar</button>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center px-5">
+              <table class="table table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Correo</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Sucursal</th>
+                  <th scope="col">Rol</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                  <td>Q.10</td>
+                  <td>
+                    <button class="btn btn-md mx-2 btn-editar" type="button">Editar</button>
+                    <button class=" btn btn-danger btn-md color-red" type="button">Eliminar</button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <-- Ventana Modal -->
+  <div class="modal mostrar-ventana" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Agregar Usuario</h4>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="my-2">
+              <input formControlName="name" type="text" placeholder="Name" class="form-control form-control-lg letter-400"/>
+            </div>
+            <div class="my-2">
+              <input formControlName="email" type="email" placeholder="Email" class="form-control form-control-lg letter-400"/>
+            </div>
+            <div class="my-2">
+              <input formControlName="password" type="password" placeholder="Password" class="form-control form-control-lg letter-400"/>
+            </div>
+            <div class="my-2">
+              <input formControlName="password" type="password" placeholder="Confirm password" class="form-control form-control-lg letter-400"/>
+            </div>
+            <div class="my-2">
+              <select class="form-select form-select-lg letter-400" >
+                <option selected>Restaurante</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+            <div class="my-2">
+              <select class="form-select form-select-lg letter-400" >
+                <option selected>Rol</option>
+                <option value="administrator">Administrador</option>
+                <option value="waiter">Mesero</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark">Guardar</button>
+          <button type="button" class="btn btn-danger" (click)="closePopup()">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <-- Fin Ventana Modal -->
 
 </div>

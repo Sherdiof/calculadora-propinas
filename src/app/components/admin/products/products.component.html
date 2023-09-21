@@ -1,0 +1,95 @@
+<div>
+
+  <app-navbar></app-navbar>
+
+  <section class="vh-100 color-white">
+    <div class="container py-5 mt-5">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-md-12">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="g-0 text-center mt-2">
+              <h1 class="letter-700 ">Productos</h1>
+            </div>
+          </div>
+          <div class="card mt-3" style="border-radius: 1rem;">
+            <div class="d-flex my-3 justify-content-end">
+              <div class="">
+                <button class="btn btn-dark btn-lg btn-block color-black mx-5" (click)="openPopup()" type="button">Agregar</button>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center px-5">
+              <table class="table table-bordered">
+                <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Imagen</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Tipo</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>Postre</td>
+                  <td>Q.10</td>
+                  <td>
+                    <button class="btn btn-md mx-2 btn-editar" type="button">Editar</button>
+                    <button class=" btn btn-danger btn-md color-red" type="button">Eliminar</button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <-- Ventana Modal -->
+    <div class="modal mostrar-ventana" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Agregar Producto</h4>
+          </div>
+          <div class="modal-body">
+            <form action="">
+              <div class="my-2">
+                <input formControlName="name" type="text"  placeholder="Nombre" class="form-control form-control-md letter-400"/>
+              </div>
+              <div class="my-2">
+                <textarea formControlName="description"  class="form-control form-control-sm letter-400">Descripción</textarea>
+              </div>
+              <div class="my-2">
+                <input formControlName="file" type="file"  placeholder="Imagen" class="form-control form-control-md letter-400"/>
+              </div>
+              <div class="my-2">
+                <input formControlName="price" type="text" placeholder="Precio" class="form-control form-control-md letter-400"/>
+              </div>
+              <div class="my-2">
+                <select class="form-select form-select-md letter-400" >
+                  <option selected>Tipo</option>
+                  <option value="1">Entrada</option>
+                  <option value="2">Plato Formal</option>
+                  <option value="3">Bebida</option>
+                  <option value="3">Postre</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark">Guardar</button>
+            <button type="button" class="btn btn-danger" (click)="closePopup()">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <-- Fin Ventana Modal -->
+
+
+</div>
