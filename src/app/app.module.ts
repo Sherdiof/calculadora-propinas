@@ -9,6 +9,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { TipHistoryComponent } from './components/tip-history/tip-history.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
     LoginComponent,
     NavbarComponent,
     OrdersComponent,
+    TipHistoryComponent,
   ],
   imports: [
     BrowserModule,

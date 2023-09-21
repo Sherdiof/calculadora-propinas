@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "calculadora-propinas-8f975": {
+      "hosting": {
+        "calculadora-propinas": [
+          "calculadora-propinas-8f975"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "calculadora-propinas-8f975"
+  }
+}
