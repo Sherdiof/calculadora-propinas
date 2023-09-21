@@ -11,7 +11,7 @@ import { userSessionService } from 'src/app/core/services/userSession.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-  
+
   usuarioActivo: any = [];
   form!: FormGroup
 
@@ -43,8 +43,8 @@ validarRolUsuario(usuario: string, contraseña: string) {
       this.usuarioActivo = result
       if (this.usuarioActivo.rol === 1) {
         this.sesion.setAdminStatus(true)
-        this.message.openSnackBar('Bienvenido Usuario');
-        this.router.navigate(['/'])
+        this.message.openSnackBar('Bienvenido Usuario ' + usuario);
+        this.router.navigate(['/home'])
       } else {
         this.sesion.setWaiterStatus(true);
         this.message.openSnackBar('Bienvenido Usuario');

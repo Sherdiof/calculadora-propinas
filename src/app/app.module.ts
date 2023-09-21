@@ -9,6 +9,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { MatSnackBarModule} from '@angular/material/snack-bar';
+import { HomeComponent } from './components/admin/home/home.component';
+import { TipSettingsComponent } from './components/admin/tip-settings/tip-settings.component';
+import { UsersComponent } from './components/admin/users/users.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import { MatSnackBarModule} from '@angular/material/snack-bar';
     LoginComponent,
     NavbarComponent,
     OrdersComponent,
+    HomeComponent,
+    TipSettingsComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,

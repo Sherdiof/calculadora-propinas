@@ -1,0 +1,26 @@
+<section class="vh-100 color-white">
+  <div class="container py-5 mt-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-md-6">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="g-0 text-center mt-2">
+              <h1 class="letter-700 ">Configuración de Propina</h1>
+          </div>
+        </div>
+        <div class="card mt-3" style="border-radius: 1rem;">
+          <div class="d-flex justify-content-center align-items-center flex-column">
+            <h5 class="mt-2">Porcentaje de propina</h5>
+            <div class="estilo-numero letter-700">
+              {{ porcentaje }}
+              <span class="porcentaje letter-400">%</span>
+            </div>
+            <input type="range" [value]="porcentaje" class="form-range mb-2" min="5" max="15" (input)="modificarPorcentaje($event)">
+          </div>
+          <div class="d-flex justify-content-end py-2 px-3">
+            <button class="btn btn-dark btn-md btn-block color-black" type="submit">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
