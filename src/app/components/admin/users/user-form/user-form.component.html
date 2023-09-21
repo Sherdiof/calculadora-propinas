@@ -1,0 +1,49 @@
+<section class="vh-100 color-white">
+  <div class="container py-5 mt-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-md-12">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="g-0 text-center mt-2">
+            <h1 class="letter-700 ">Agregar Usuario</h1>
+          </div>
+        </div>
+        <div class="card mt-3" style="border-radius: 1rem;">
+          <div class="d-flex my-3 justify-content-center">
+            <form (ngSubmit)="onSubmit()">
+              <div class="my-2">
+                <p class="col-form-label" for="name">Nombre:</p>
+                <input type="text" id="name" [(ngModel)]="user.name" class="form-control form-control-lg letter-400" name="name" required>
+              </div>
+
+              <div class="my-2">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" [(ngModel)]="user.email" class="form-control form-control-lg letter-400" name="email" required>
+              </div>
+
+              <div class="my-2">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" [(ngModel)]="password" class="form-control form-control-lg letter-400" name="password" required>
+              </div>
+
+              <div class="my-2">
+                <label for="role">Rol:</label>
+                <select id="role" [(ngModel)]="user.role" class="form-select form-select-md letter-400" name="role">
+                  <option value="admin">Admin</option>
+                  <option value="waiter">Waiter</option>
+                </select>
+              </div>
+
+              <div class="my-2">
+                <button class="btn btn-dark btn-lg btn-block w-100 color-black" type="submit">Guardar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+

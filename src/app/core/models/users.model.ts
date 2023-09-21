@@ -1,4 +1,13 @@
-export class usersRequest { 
+
+export interface User {
+  id?: string;
+  name: string;
+  email: string;
+  active?: boolean;
+  role: 'admin' | 'waiter';
+}
+
+export class usersRequest {
     id?: number;
     usuario: string;
     contraseña: string;

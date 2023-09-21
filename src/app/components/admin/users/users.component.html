@@ -13,31 +13,31 @@
           <div class="card mt-3" style="border-radius: 1rem;">
             <div class="d-flex my-3 justify-content-end">
               <div class="">
-                <button class="btn btn-dark btn-lg btn-block color-black mx-5" (click)="openPopup()" type="button">Agregar</button>
+                <a href="/user-form/" class="btn btn-dark btn-lg btn-block color-black mx-5">
+                  Agregar
+                </a>
               </div>
             </div>
             <div class="d-flex justify-content-center align-items-center px-5">
               <table class="table table-bordered">
                 <thead class="thead-dark">
                 <tr>
-                  <th scope="col">#</th>
                   <th scope="col">Correo</th>
                   <th scope="col">Nombre</th>
-                  <th scope="col">Sucursal</th>
                   <th scope="col">Rol</th>
                   <th scope="col">Acciones</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>Q.10</td>
+                <tr *ngFor="let user of users">
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.role }}</td>
                   <td>
-                    <button class="btn btn-md mx-2 btn-editar" type="button">Editar</button>
-                    <button class=" btn btn-danger btn-md color-red" type="button">Eliminar</button>
+                    <a class="btn btn-md mx-2 btn-editar" href="user-form/{{user.email}}">Editar</a>
+                    <button class="btn btn-danger btn-md color-red" type="button" (click)="deleteUser(user)">
+                      Eliminar
+                    </button>
                   </td>
                 </tr>
                 </tbody>
@@ -48,52 +48,4 @@
       </div>
     </div>
   </section>
-
-  <-- Ventana Modal -->
-  <div class="modal mostrar-ventana" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Agregar Usuario</h4>
-        </div>
-        <div class="modal-body">
-          <form action="">
-            <div class="my-2">
-              <input formControlName="name" type="text" placeholder="Name" class="form-control form-control-lg letter-400"/>
-            </div>
-            <div class="my-2">
-              <input formControlName="email" type="email" placeholder="Email" class="form-control form-control-lg letter-400"/>
-            </div>
-            <div class="my-2">
-              <input formControlName="password" type="password" placeholder="Password" class="form-control form-control-lg letter-400"/>
-            </div>
-            <div class="my-2">
-              <input formControlName="password" type="password" placeholder="Confirm password" class="form-control form-control-lg letter-400"/>
-            </div>
-            <div class="my-2">
-              <select class="form-select form-select-lg letter-400" >
-                <option selected>Restaurante</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-            </div>
-            <div class="my-2">
-              <select class="form-select form-select-lg letter-400" >
-                <option selected>Rol</option>
-                <option value="administrator">Administrador</option>
-                <option value="waiter">Mesero</option>
-              </select>
-            </div>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-dark">Guardar</button>
-          <button type="button" class="btn btn-danger" (click)="closePopup()">Cancelar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <-- Fin Ventana Modal -->
-
 </div>

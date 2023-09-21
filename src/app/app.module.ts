@@ -18,6 +18,8 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {environment} from "../enviroments/enviroment";
 import { TipHistoryComponent } from './components/tip-history/tip-history.component';
 import { ProductsComponent } from './components/admin/products/products.component';
+import { UserFormComponent } from './components/admin/users/user-form/user-form.component';
+import { ProductFormComponent } from './components/admin/products/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { ProductsComponent } from './components/admin/products/products.componen
     UsersComponent,
     TipHistoryComponent,
     ProductsComponent,
+    UserFormComponent,
+    ProductFormComponent,
   ],
   imports: [
     BrowserModule,

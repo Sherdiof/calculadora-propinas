@@ -14,7 +14,7 @@
           <div class="card mt-3" style="border-radius: 1rem;">
             <div class="d-flex my-3 justify-content-end">
               <div class="">
-                <button class="btn btn-dark btn-lg btn-block color-black mx-5" (click)="openPopup()" type="button">Agregar</button>
+                <a href="/product-form/" class="btn btn-dark btn-lg btn-block color-black mx-5" >Agregar</a>
               </div>
             </div>
             <div class="d-flex justify-content-center align-items-center px-5">
@@ -49,47 +49,5 @@
       </div>
     </div>
   </section>
-
-  <-- Ventana Modal -->
-    <div class="modal mostrar-ventana" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Agregar Producto</h4>
-          </div>
-          <div class="modal-body">
-            <form action="">
-              <div class="my-2">
-                <input formControlName="name" type="text"  placeholder="Nombre" class="form-control form-control-md letter-400"/>
-              </div>
-              <div class="my-2">
-                <textarea formControlName="description"  class="form-control form-control-sm letter-400">Descripción</textarea>
-              </div>
-              <div class="my-2">
-                <input formControlName="file" type="file"  placeholder="Imagen" class="form-control form-control-md letter-400"/>
-              </div>
-              <div class="my-2">
-                <input formControlName="price" type="text" placeholder="Precio" class="form-control form-control-md letter-400"/>
-              </div>
-              <div class="my-2">
-                <select class="form-select form-select-md letter-400" >
-                  <option selected>Tipo</option>
-                  <option value="1">Entrada</option>
-                  <option value="2">Plato Formal</option>
-                  <option value="3">Bebida</option>
-                  <option value="3">Postre</option>
-                </select>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-dark">Guardar</button>
-            <button type="button" class="btn btn-danger" (click)="closePopup()">Cancelar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  <-- Fin Ventana Modal -->
-
 
 </div>

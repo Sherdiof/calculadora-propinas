@@ -33,6 +33,12 @@ export class LoginComponent implements OnInit {
     const {email, password} = this.form.value;
 
     this.authService.login(email, password).then(res => {
+
+      if (res['active'] == false) {
+        this._snackBar.open("Usuario desactivado", "Cerrar");
+        return;
+      }
+
       if (res['role'] == 'admin') {
         this.router.navigateByUrl('/home');
       } else {
