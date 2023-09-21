@@ -6,6 +6,7 @@ import {AngularFirestore} from "@angular/fire/compat/firestore";
 @Injectable({
   providedIn: 'root'
 })
+
 export class AuthService {
   constructor(
     public afAuth: AngularFireAuth,
@@ -43,4 +44,5 @@ export class AuthService {
     localStorage.removeItem('user');
     return this.afAuth.signOut();
   }
+
 }

@@ -1,31 +1,48 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { dishesRequest } from 'src/app/core/models/dishes.model';
 import { dishesCategoryRequest } from 'src/app/core/models/dishesCategory.model';
+import { detailOrderModelRequest } from 'src/app/core/models/detailOrder.model';
 import { messageService } from 'src/app/core/services/message.service';
 import { ordersService } from 'src/app/core/services/orders.service';
+import { totalOrdersModelRequest } from 'src/app/core/models/totalOrder.model';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/core/services/auth.service';
 
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.css']
 })
+
+
 export class OrdersComponent implements OnInit {
 
   dishes: dishesRequest[] = [];
   dishesCategory: dishesCategoryRequest[] = []
   dishesOrdered: any = [];
   cantidad: number = 0;
-  totalGeneral: number = 0;
   categoria?: number;
   principal: boolean = true;
+  cargando: boolean = false;
+  texto: string = 'Confirmar orden';
+  propina: number = 0; 
+  totalGeneralPropina: number = 0;
+  totalGeneral: number = 0;
+  porcentajePropina: number;
+  usuarioActivo: string;
 
   constructor(
     public mensaje: messageService,
     private orders: ordersService,
+    private _ordersService: ordersService,
+    private toastr: ToastrService,
+    private auth: AuthService
   ) { }
 
   ngOnInit(): void {
     this.getDishesCategories()
+    this.getPropina()
+    this.obtenerusuarioActivo()
   }
 
   setPrincipal() {
@@ -33,13 +50,23 @@ export class OrdersComponent implements OnInit {
     this.categoria = 0;
   }
 
+  obtenerusuarioActivo(){
+    this.usuarioActivo = this.auth.getUser().email
+  }
+
   changeCategory(category: number) {
     this.categoria = category
     this.principal = false;
 
     switch (category) {
+      case 1:
+        this.getEntradas()
+        break;
       case 2:
         this.getDishes()
+        break;
+        case 3:
+        this.getPostres()
         break;
       case 4:
         this.getBebidas()
@@ -48,7 +75,6 @@ export class OrdersComponent implements OnInit {
         this.getDishesCategories()
         break;
     }
-
   }
 
   getDishesCategories() {
@@ -87,6 +113,30 @@ export class OrdersComponent implements OnInit {
     })
   }
 
+  getEntradas() {
+    this.orders.getEntradas().subscribe({
+      next: result => {
+        this.dishes = result
+      },
+      error: err => {
+        this.mensaje.openSnackBar('No se pudo obtener el menú de bebidas')
+        console.log('Error no se pudieron obtener los platillos', err)
+      }
+    })
+  }
+
+  getPostres() {
+    this.orders.getPostes().subscribe({
+      next: result => {
+        this.dishes = result
+      },
+      error: err => {
+        this.mensaje.openSnackBar('No se pudo obtener el menú de bebidas')
+        console.log('Error no se pudieron obtener los platillos', err)
+      }
+    })
+  }
+
   agregarPlatillo(item: any) {
     const index = this.dishesOrdered.findIndex((dish: any) => dish.id === item.id);
 
@@ -107,6 +157,8 @@ export class OrdersComponent implements OnInit {
 
   private actualizarTotalGeneral() {
     this.totalGeneral = this.dishesOrdered.reduce((total: number, dish: any) => total + dish.totalPorFila, 0);
+    this.propina = this.totalGeneral * (this.porcentajePropina / 100)
+    this.totalGeneralPropina = this.totalGeneral + this.propina
   }
 
   eliminarPlatillo(plato: any) {
@@ -125,10 +177,65 @@ export class OrdersComponent implements OnInit {
     }
   }
 
-
-  facturar(){
-    console.log('Productos Consumidos: ', this.dishesOrdered, 'Total de su compra: Q',this.totalGeneral)
-    this.mensaje.openSnackBar(`Total de su Compra: Q ${this.totalGeneral}`)
+   formatearNumeroConDosDecimales(numero: number): string {
+    return numero.toFixed(2);
   }
+
+  facturar() {
+    this.texto = "Confirmando Orden..."
+    this.cargando = true;
+    const orden = this.dishesOrdered
+    
+    orden.forEach((dato: detailOrderModelRequest, index: any) => {
+      this._ordersService.guardarDetalleOrden(dato).then(() => {
+        this.toastr.success('Orden registrada con exito')
+        this.mensaje.openSnackBar('Orden registrada con exito');
+        this.cargando = false;
+      }, error => {
+        console.log(error)
+        this.toastr.error('Ocurrió un error', 'Error')
+        this.cargando = false;
+      });
+    })
+
+    const totalOrden: totalOrdersModelRequest = {
+      total: this.totalGeneral,
+      propina: this.propina,
+      totalConPropina: this.totalGeneralPropina,
+      fechaCreacion: new Date(),
+      emailMesero: this.usuarioActivo,
+    }
+
+    this._ordersService.guardarTotalOrden(totalOrden).then(()=>{
+      /* this.toastr.success('Total de orden guardado') */
+      console.log('Se guardó el total de orden');
+    },error =>{
+      console.log('No se pudo guardar el total de orden')
+    })
+
+    this.dishesOrdered =[]
+  }
+
+
+  mostrar(){
+    this.toastr.success('Hola');
+  }
+
+
+  getPropina() {
+    this._ordersService.obtenerPorcentajePropnia().subscribe(
+      porcentaje => {
+        if (porcentaje !== null) {
+          this.porcentajePropina = porcentaje
+        } else {
+          console.log('No se pudo obtener el porcentaje de propina.');
+        }
+      },
+      error => {
+        console.error('Error al obtener el porcentaje:', error);
+      }
+    );
+  }
+  
 
 }

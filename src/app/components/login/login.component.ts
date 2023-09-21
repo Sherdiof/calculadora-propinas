@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
     const {email, password} = this.form.value;
 
     this.authService.login(email, password).then(res => {
-
       if (res['active'] == false) {
         this._snackBar.open("Usuario desactivado", "Cerrar");
         return;
@@ -59,4 +58,7 @@ export class LoginComponent implements OnInit {
   logout() {
     this.authService.logout().then();
   }
+
+
+
 }

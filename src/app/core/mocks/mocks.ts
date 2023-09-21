@@ -6,7 +6,7 @@ export const dishesMock: Array<dishesRequest> = [
     {
         id:1,
         nombre: 'Hamburguesa Grande',
-        descripcion: 'Hamburguesa con doble carne, pepinillos y papas orem ipsum dolor sit amet consectetur adipisicing elit.',
+        descripcion: 'Hamburguesa con doble carne, pepinillos y papas..',
         precio: 45.00,
         imagen: '../../../assets/hamburguesa-inicio.jpg'
       },
@@ -20,30 +20,30 @@ export const dishesMock: Array<dishesRequest> = [
       {
         id:3,
         nombre: 'Pizza Grande',
-        descripcion: 'Pizza con carne y queso extra  Ipsum cumque veritatis earum, explicabo deleniti expedita quam soluta provident, inventore sint numquam vel?',
+        descripcion: 'Pizza con carne y queso extra.',
         precio: 100.00,
         imagen: '../../../assets/pizza.jpg'
       },
       {
         id:4,
-        nombre: 'Hamburguesa Grande',
-        descripcion: 'Hamburguesa con doble carne, pepinillos y papas',
+        nombre: 'Pollo asado',
+        descripcion: 'Pollo entero para 5 personas',
         precio: 45.00,
-        imagen: '../../../assets/hamburguesa-inicio.jpg'
+        imagen: '../../../assets/pollo.jpg'
       },
       {
         id:5,
         nombre: 'Carne Asada',
         descripcion: 'Platillo de carne importada',
         precio: 80.00,
-        imagen: '../../../assets/hotdog.jpg'
+        imagen: '../../../assets/carne.jpg'
       },
       {
         id:6,
-        nombre: 'Pizza Grande',
-        descripcion: 'Pizza con carne y queso extra',
+        nombre: 'Filete',
+        descripcion: 'Filete de pescado asado',
         precio: 100.00,
-        imagen: '../../../assets/pizza.jpg'
+        imagen: '../../../assets/filete.jpg'
       },
 ]
 
@@ -53,21 +53,71 @@ export const bebidasMock: Array<dishesRequest> = [
       nombre: 'Coca Cola en lata',
       descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
       precio: 10.00,
-      imagen: '../../../assets/bebidas.jpeg'
+      imagen: '../../../assets/coca.jpg'
     },
     {
       id:8,
       nombre: 'Pepsi',
       descripcion: 'Litro y medio desechable',
-      precio: 20.00,
-      imagen: '../../../assets/bebidas.jpeg'
+      precio: 10.00,
+      imagen: '../../../assets/pepsi.jpg'
     },
     {
       id:9,
       nombre: 'Mirinda',
       descripcion: 'Pichell refill',
+      precio: 10.00,
+      imagen: '../../../assets/mirinda.jpg'
+    },
+]
+
+
+export const entradasMock: Array<dishesRequest> = [
+  {
+      id:10,
+      nombre: 'Nachos con queso',
+      descripcion: 'Porción gigante de nachos para 6 personas.',
+      precio: 10.00,
+      imagen: '../../../assets/nachos.jpg'
+    },
+    {
+      id:11,
+      nombre: 'Tomate fettucchinni',
+      descripcion: 'Tomate con relleno de arroz',
+      precio: 20.00,
+      imagen: '../../../assets/tomate.jpg'
+    },
+    {
+      id:12,
+      nombre: 'Aros de cebolla',
+      descripcion: '10 aros de cebolla para compartir con la familia',
       precio: 100.00,
-      imagen: '../../../assets/bebidas.jpeg'
+      imagen: '../../../assets/aros.jpg'
+    },
+]
+
+
+export const postresMock: Array<dishesRequest> = [
+  {
+      id:13,
+      nombre: 'Helado 3 bolas',
+      descripcion: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+      precio: 10.00,
+      imagen: '../../../assets/helado.jpg'
+    },
+    {
+      id:14,
+      nombre: 'Ensalada',
+      descripcion: 'Ensalada de pepino',
+      precio: 20.00,
+      imagen: '../../../assets/ensalada.jpg'
+    },
+    {
+      id:15,
+      nombre: 'Pastel de aranadanos',
+      descripcion: 'Pastel frio 3 leches',
+      precio: 100.00,
+      imagen: '../../../assets/pastel.jpg'
     },
 ]
 
