@@ -3,7 +3,7 @@
         <div class="d-flex align-items-center mb-3 pb-1">
             <img src="../assets/ASTER-WHITE.png" class="resize-image">
             <span class="h6 mb-0 letter-700 img-logo-name">sterFood</span>
-          </div>  
+          </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -14,17 +14,26 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item" *ngIf="isAdmin">
+              <a class="nav-link" href="/home">Inicio</a>
+            </li>
+            <li class="nav-item" *ngIf="isAdmin">
+              <a class="nav-link" href="/users">Usuarios</a>
+            </li>
+            <li class="nav-item" *ngIf="isAdmin">
+              <a class="nav-link" href="/tip-settings">Configuración de propina</a>
+            </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Menú</a>
+              <a class="nav-link active" aria-current="page" href="/orders">Menú</a>
             </li>
-            <li class="nav-item" *ngIf="mesero">
-              <a class="nav-link" href="#">Ordenes</a>
+            <li class="nav-item" *ngIf="isAdmin">
+              <a class="nav-link" href="/orders">Ordenes</a>
             </li>
-            <li class="nav-item" *ngIf="administrador">
+            <li class="nav-item" *ngIf="isAdmin">
                 <a class="nav-link" href="#">Tablero Administrador</a>
               </li>
             <li class="nav-item">
-                <a class="nav-link text-danger" href="#">Cerrar Sesión</a>
+                <button class="nav-link text-danger" (click)="logout()">Cerrar Sesión</button>
               </li>
           </ul>
           <form class="d-flex mt-3" role="search">
@@ -36,9 +45,6 @@
     </div>
   </nav>
 
-  <div class="container mt-5 grid">
-    <app-orders *ngIf="mesero"></app-orders>
-  </div>
 
-  
+
 
